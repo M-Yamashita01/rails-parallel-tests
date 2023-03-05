@@ -1,0 +1,1 @@
+# rails-parallel-tests
