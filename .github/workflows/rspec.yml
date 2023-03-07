@@ -4,17 +4,17 @@
 #
 # This workflow will install a prebuilt Ruby version, install dependencies, and
 # run tests and linters.
-name: "Ruby on Rails CI"
+name: "RSpec"
 on:
   push:
     branches: [ "main" ]
   pull_request:
     branches: [ "main" ]
 jobs:
-  test:
+  rspec:
     runs-on: ubuntu-latest
     services:
-      postgres:
+      db:
         image: mysql:5.7
         env:
           MYSQL_USER: root
@@ -28,14 +28,19 @@ jobs:
         with:
           bundler-cache: true
 
-      - name: Set up database schema
+      - name: Set up database
         run: |
           RAILS_ENV=test bundle exec rake parallel:drop
           RAILS_ENV=test bundle exec rake parallel:create
-          RAILS_ENV=test bundle exec rake parallel:migrate        
+          RAILS_ENV=test bundle exec rake parallel:migrate
+        env:
+          TZ: Asia/Tokyo
+          MYSQL_USER: root
+          MYSQL_HOST: db
 
       - name: Run tests
         run: RAILS_ENV=test bundle exec rake parallel:spec
         env:
           TZ: Asia/Tokyo
           MYSQL_USER: root
+          MYSQL_HOST: db
