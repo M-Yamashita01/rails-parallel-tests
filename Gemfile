@@ -54,6 +54,7 @@ group :development, :test do
 
   gem 'parallel_tests'
 
+  gem "rspec_junit_formatter", require: false
   gem 'rspec-rails'
 end
 

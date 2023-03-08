@@ -175,6 +175,8 @@ GEM
       rspec-mocks (~> 3.11)
       rspec-support (~> 3.11)
     rspec-support (3.12.0)
+    rspec_junit_formatter (0.6.0)
+      rspec-core (>= 2, < 4, != 2.12.0)
     sprockets (4.2.0)
       concurrent-ruby (~> 1.0)
       rack (>= 2.2.4, < 4)
@@ -217,6 +219,7 @@ DEPENDENCIES
   rails (~> 7.0.4, >= 7.0.4.2)
   redis (~> 4.0)
   rspec-rails
+  rspec_junit_formatter
   sprockets-rails
   stimulus-rails
   turbo-rails
