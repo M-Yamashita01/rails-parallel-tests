@@ -17,7 +17,7 @@ jobs:
       db:
         image: mysql:5.7
         env:
-          MYSQL_DATABASE: rails_parallel_tests_test
+          MYSQL_DATABASE: parallel_tests_db_test
           MYSQL_ROOT_PASSWORD: password
         ports:
         - 3306:3306

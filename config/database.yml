@@ -19,14 +19,14 @@ default: &default
 
 development:
   <<: *default
-  database: rails_parallel_tests_development
+  database: parallel_tests_db
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
 # Do not set this db to the same as development or production.
 test:
   <<: *default
-  database: rails_parallel_tests_test<%= ENV['TEST_ENV_NUMBER'] %>
+  database: parallel_tests_db_test<%= ENV['TEST_ENV_NUMBER'] %>
 
 # As with config/credentials.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
@@ -50,6 +50,6 @@ test:
 #
 production:
   <<: *default
-  database: rails_parallel_tests_production
+  database: parallel_tests_db_production
   username: rails_parallel_tests
   password: <%= ENV["RAILS_PARALLEL_TESTS_DATABASE_PASSWORD"] %>

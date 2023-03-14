@@ -5,7 +5,7 @@ services:
       - ./tmp/db:/var/lib/mysql
     environment:
       MYSQL_ROOT_PASSWORD: password
-      MYSQL_DATABASE: rails_parallel_tests_development
+      MYSQL_DATABASE: parallel_tests_db
       MYSQL_USER: user
       MYSQL_PASSWORD: password
   web:
