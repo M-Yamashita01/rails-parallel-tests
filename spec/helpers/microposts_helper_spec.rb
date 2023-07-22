@@ -12,6 +12,6 @@ require 'rails_helper'
 # end
 RSpec.describe MicropostsHelper, type: :helper do
   it "sample test" do
-    expect("test").to eq("test")
+    expect("test").to_not eq("test")
   end
 end
